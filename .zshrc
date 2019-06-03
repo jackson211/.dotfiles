@@ -9,20 +9,13 @@ export ZSH=/Users/jackson/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  custom_mac
-  dir 
-  vcs 
-)
 
-# Create a custom Mac prompt section
-POWERLEVEL9K_CUSTOM_MAC="echo -n '\ufb8a'"
-POWERLEVEL9K_CUSTOM_MAC_FOREGROUND="white" 
-POWERLEVEL9K_CUSTOM_MAC_BACKGROUND="black"
+POWERLEVEL9K_BATTERY_ICON='\uf1e6 '
 
-# Load Nerd Fonts with Powerlevel9k theme for Zsh
-# POWERLEVEL9K_MODE='nerdfont-complete'
-# source ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(battery status time)
+
+plugins=(zsh-syntax-highlighting zsh-autosuggestions git colored-man-pages autojump)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -66,8 +59,8 @@ POWERLEVEL9K_CUSTOM_MAC_BACKGROUND="black"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-plugins=(zsh-syntax-highlighting zsh-autosuggestions git colored-man-pages autojump)
+
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,11 +98,10 @@ source $ZSH/oh-my-zsh.sh
 #   fi
 # }
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jackson/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jackson/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jackson/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jackson/google-cloud-sdk/completion.zsh.inc'; fi
+# aliases
+alias python='python3'
+
 
 # PATH 
 export PATH="/usr/local/bin:$PATH"
