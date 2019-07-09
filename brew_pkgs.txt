@@ -1,0 +1,16 @@
+aria2
+autoconf
+autojump
+bdw-gc
+berkeley-db
+ghostscript
+gmp
+libarchive
+libpng
+libyaml
+pcre
+python
+reattach-to-user-namespace
+tmux
+unixodbc
+wget
