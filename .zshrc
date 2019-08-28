@@ -13,7 +13,7 @@ POWERLEVEL9K_BATTERY_ICON='\uf1e6 '
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 POWERLEVEL9K_TIME_BACKGROUND='black'
 POWERLEVEL9K_TIME_FOREGROUND='white'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs virtualenv)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time battery)
 
 # Plugins
@@ -21,7 +21,7 @@ plugins=(zsh-syntax-highlighting zsh-autosuggestions git colored-man-pages autoj
 source $ZSH/oh-my-zsh.sh
 
 # aliases
-alias lc='colorls'
+alias c='clear'
 
 # PATH 
 export PATH="/usr/local/bin:$PATH"
