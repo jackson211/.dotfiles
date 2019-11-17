@@ -20,6 +20,12 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'itchyny/lightline.vim'
 
 Plugin 'scrooloose/nerdtree'
+
+Plugin 'Yggdroot/indentLine'
+
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -34,22 +40,17 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
+call glaive#Install()
+Glaive codefmt plugin[mappings]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set noshowmode
-" let g:lightline = {
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
-"       \ }
-"       \ }
 set noshowmode
 let g:lightline = {
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'absolutepath', 'modified'] ],
+      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
       \   'right': [ [ 'lineinfo' ], ['percent'] ]
       \ },
       \ 'component': {
@@ -77,5 +78,22 @@ let g:NERDTreeWinSize=35
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-codefmt
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup autoformat_settings
+    autocmd FileType bzl AutoFormatBuffer buildifier
+    autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+    autocmd FileType dart AutoFormatBuffer dartfmt
+    autocmd FileType go AutoFormatBuffer gofmt
+    autocmd FileType gn AutoFormatBuffer gn
+    autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+    autocmd FileType java AutoFormatBuffer google-java-format
+    " autocmd FileType python AutoFormatBuffer yapf
+    autocmd FileType python AutoFormatBuffer autopep8
+    autocmd FileType vue AutoFormatBuffer prettier
+augroup END
 
 

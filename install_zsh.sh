@@ -37,7 +37,7 @@ else
 fi
 
 git clone git://github.com/wting/autojump.git
-./autojump/install.py
+python3 ./autojump/install.py
 rm -rf autojump
 
-cp ./.zshrc ~
+ln -sv ./.zshrc ~

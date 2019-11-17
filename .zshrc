@@ -17,7 +17,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs virtualenv)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time battery)
 
 # Plugins
-#plugins=(zsh-syntax-highlighting zsh-autosuggestions git colored-man-pages autojump)
+plugins=(zsh-syntax-highlighting zsh-autosuggestions git colored-man-pages autojump)
 source $ZSH/oh-my-zsh.sh
 
 # aliases
@@ -27,4 +27,6 @@ alias c='clear'
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+export PATH="/usr/local/texlive/2019/bin/x86_64-darwin:$PATH"
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
