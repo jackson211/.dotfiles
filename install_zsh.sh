@@ -40,4 +40,12 @@ git clone git://github.com/wting/autojump.git
 python3 ./autojump/install.py
 rm -rf autojump
 
+ZSHRC=~/.zshrc
+if test -L "$ZSHRC"; then
+    echo "$ZSHRC exist"
+    rm ~/.zshrc
+else
+    echo "$ZSHRC does not exist"
+fi
+
 ln -sv ./.zshrc ~
