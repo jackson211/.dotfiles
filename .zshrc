@@ -14,17 +14,6 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
 
 #################################################
 # Theme
@@ -33,12 +22,16 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Powerlevel9k config
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_BATTERY_ICON='\uf1e6 '
+# POWERLEVEL9K_BATTERY_ICON='\uf1e6 '
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 POWERLEVEL9K_TIME_BACKGROUND='black'
 POWERLEVEL9K_TIME_FOREGROUND='white'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs virtualenv)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time battery)
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=black
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=blue
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir dir_writable vcs virtualenv)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status time ram)
 
 
 #################################################
