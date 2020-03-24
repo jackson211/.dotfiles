@@ -16,16 +16,13 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins list
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'christoomey/vim-tmux-navigator'
-
 Plugin 'itchyny/lightline.vim'
-
 Plugin 'scrooloose/nerdtree'
-
 Plugin 'Yggdroot/indentLine'
-
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
+Plugin 'tpope/vim-surround'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -93,7 +90,9 @@ augroup autoformat_settings
     autocmd FileType java AutoFormatBuffer google-java-format
     " autocmd FileType python AutoFormatBuffer yapf
     autocmd FileType python AutoFormatBuffer autopep8
+    autocmd FileType rust AutoFormatBuffer rustfmt
     autocmd FileType vue AutoFormatBuffer prettier
 augroup END
+                      
 
 
