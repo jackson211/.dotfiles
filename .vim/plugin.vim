@@ -26,6 +26,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'zxqfl/tabnine-vim'
 Plugin 'dense-analysis/ale'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call vundle#end()            " required
@@ -48,6 +49,8 @@ Glaive codefmt plugin[mappings]
 " => vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='luna'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
