@@ -127,6 +127,10 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" Turn hybrid line numbers on
+:set number relativenumber
+:set nu rnu
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -194,20 +198,32 @@ set wrap "Wrap lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Parenthesis/bracket
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vnoremap $1 <esc>`>a)<esc>`<i(<esc>
-vnoremap $2 <esc>`>a]<esc>`<i[<esc>
-vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-vnoremap $$ <esc>`>a"<esc>`<i"<esc>
-vnoremap $q <esc>`>a'<esc>`<i'<esc>
-vnoremap $e <esc>`>a"<esc>`<i"<esc>
+"-------------------------------------------------------------------------------
+"" Autocomplete parenthesis, brackets and braces
+"-------------------------------------------------------------------------------
 
-" Map auto complete of (, ", ', [
-inoremap $1 ()<esc>i
-inoremap $2 []<esc>i
-inoremap $3 {}<esc>i
-inoremap $4 {<esc>o}<esc>O
-inoremap $q ''<esc>i
-inoremap $e ""<esc>i
+inoremap  (  ()<Left>
+inoremap  [  []<Left>
+inoremap  {  {}<Left>
+
+" surround content
+vnoremap  (  s()<Esc>P<Right>%
+vnoremap  [  s[]<Esc>P<Right>%
+vnoremap  {  s{}<Esc>P<Right>%
+
+" surround content with additional spaces
+vnoremap  )  s(<Space><Space>)<Esc><Left>P<Right><Right>%
+vnoremap  ]  s[<Space><Space>]<Esc><Left>P<Right><Right>%
+vnoremap  }  s{<Space><Space>}<Esc><Left>P<Right><Right>%
+
+"-------------------------------------------------------------------------------
+" Autocomplete quotes
+"-------------------------------------------------------------------------------
+
+" surround content (visual and select mode)
+vnoremap  '  s''<Esc>P<Right>
+vnoremap  "  s""<Esc>P<Right>
+vnoremap  `  s``<Esc>P<Right>
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -236,8 +252,7 @@ map <C-l> <C-W>l
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
 
-" Close all the buffers
-map <leader>ba :bufdo bd<cr>
+" Close all the buffers map <leader>ba :bufdo bd<cr>
 
 map <leader>l :bnext<cr>
 map <leader>h :bprevious<cr>

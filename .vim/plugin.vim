@@ -16,13 +16,17 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins list
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'itchyny/lightline.vim'
+" Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
 Plugin 'tpope/vim-surround'
+Plugin 'zxqfl/tabnine-vim'
+Plugin 'dense-analysis/ale'
+Plugin 'vim-airline/vim-airline'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -41,28 +45,9 @@ call glaive#Install()
 Glaive codefmt plugin[mappings]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => lightline 
+" => vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set noshowmode
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-      \   'right': [ [ 'lineinfo' ], ['percent'] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': ' ', 'right': ' ' },
-      \ 'subseparator': { 'left': ' ', 'right': ' ' }
-      \ }
+let g:airline#extensions#ale#enabled = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
