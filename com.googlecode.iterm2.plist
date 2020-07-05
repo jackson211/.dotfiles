@@ -47829,7 +47829,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>MesloLGS-NF-Regular 16</string>
+			<string>MesloLGS-NF-Regular 15</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -50270,9 +50270,9 @@
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Knack</string>
 		<string>MesloLGS NF</string>
-		<string>Meslo LG L DZ for Powerline</string>
+		<string>Fira Code</string>
+		<string>Fira Mono for Powerline</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -50281,7 +50281,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{397, 712}</string>
+		<string>{429, 985}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
@@ -50290,11 +50290,11 @@
 	<key>NoSyncLastTipTime</key>
 	<real>591160418.41533697</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>80</integer>
+	<integer>82</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586706381.73873103</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -51160,13 +51160,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-19T08:15:35Z</date>
+	<date>2020-07-04T08:22:39Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>2909975628</integer>
+	<integer>3791039111</integer>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
