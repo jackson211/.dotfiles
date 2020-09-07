@@ -28,6 +28,7 @@ Plugin 'dense-analysis/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rust-lang/rust.vim'
+Plugin 'arcticicestudio/nord-vim'
 "fzf  If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 
@@ -49,12 +50,15 @@ call glaive#Install()
 Glaive codefmt plugin[mappings]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-airline
+" => vim-airline / Color scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:nord_uniform_status_lines = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_theme='luna'
 
+colorscheme nord
+set background=dark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERDtree 

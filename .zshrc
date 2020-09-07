@@ -51,7 +51,6 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 #################################################
 alias c='clear'
-alias vz='vim ~/.zshrc'
 
 #################################################
 # PATH 
@@ -60,7 +59,8 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 export PATH="/usr/local/texlive/2019/bin/x86_64-darwin:$PATH"
-export PATH="/usr/local/Cellar/gcc/9.3.0_1/bin:$PATH"
+export PATH="/usr/local/Cellar/gcc/10.1.0/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 #################################################
 # Terminal
@@ -88,3 +88,5 @@ unset __conda_setup
 
 # To customize prompt, run `p10k configure` or edit ~/dotfile/.p10k.zsh.
 [[ ! -f ~/dotfile/.p10k.zsh ]] || source ~/dotfile/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
