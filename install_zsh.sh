@@ -14,15 +14,18 @@ if git clone --depth=1 git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh;
     echo -e "Installed OH-MY-ZSH\n"
 fi
 
-# powerlevel9k
-if git clone --depth=1 https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k; then :
+
+# powerlevel10k
+if git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k; then :
 else
-    cd ~/.oh-my-zsh/custom/themes/powerlevel9k && git pull
+    cd ~/.oh-my-zsh/custom/themes/powerlevel10k && git pull
 fi
 
 # font
-wget -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf -P ~/.fonts/
-wget -N https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf -P ~/.fonts/
+wget -N https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P ~/.fonts/
+wget -N https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -P ~/.fonts/
+wget -N https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -P ~/.fonts/
+wget -N https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P ~/.fonts/
 
 fc-cache -fv ~/.fonts
 
@@ -48,4 +51,4 @@ else
     echo "$ZSHRC does not exist"
 fi
 
-ln -sv ./.zshrc ~
+cp .zshrc ~
