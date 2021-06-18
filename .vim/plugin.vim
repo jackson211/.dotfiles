@@ -15,6 +15,8 @@ Plugin 'VundleVim/Vundle.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins list
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'rust-lang/rust.vim'
+Plugin 'fatih/vim-go'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
@@ -27,7 +29,6 @@ Plugin 'zxqfl/tabnine-vim'
 Plugin 'dense-analysis/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rust-lang/rust.vim'
 Plugin 'arcticicestudio/nord-vim'
 "fzf  If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
