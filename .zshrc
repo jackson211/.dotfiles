@@ -27,26 +27,14 @@ export ZSH=$HOME/.oh-my-zsh
 #################################################
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# # Powerlevel9k config
-# POWERLEVEL9K_MODE='nerdfont-complete'
-# # POWERLEVEL9K_BATTERY_ICON='\uf1e6 '
-# POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
-# POWERLEVEL9K_TIME_BACKGROUND='black'
-# POWERLEVEL9K_TIME_FOREGROUND='white'
-# POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-# POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=black
-# POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=blue
-# POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir dir_writable vcs virtualenv)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status time ram)
-
-
 #################################################
 # Plugins
 #################################################
 plugins=(zsh-syntax-highlighting zsh-autosuggestions git colored-man-pages autojump)
-source $ZSH/oh-my-zsh.sh
 
+source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.oh-my-zsh/custom//plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/custom//plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #################################################
 # Aliases
 #################################################
@@ -83,11 +71,14 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+[[ -s /Users/jackson/.autojump/etc/profile.d/autojump.sh ]] && source /Users/jackson/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/dotfile/.p10k.zsh.
-# [[ ! -f ~/dotfile/.p10k.zsh ]] || source ~/dotfile/.p10k.zsh
+#[[ ! -f ~/dotfile/.p10k.zsh ]] || source ~/dotfile/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
