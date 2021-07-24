@@ -15,21 +15,27 @@ Plugin 'VundleVim/Vundle.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins list
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Language
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
+Plugin 'ryanoasis/vim-devicons'
+
+" Style
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'arcticicestudio/nord-vim'
+
+" Functionality
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
-Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'zxqfl/tabnine-vim'
 Plugin 'dense-analysis/ale'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'arcticicestudio/nord-vim'
 Plugin 'junegunn/fzf.vim'
 "fzf  If installed using Homebrew
 "set rtp+=/usr/local/opt/fzf
@@ -120,6 +126,7 @@ let g:ale_lint_on_save = 1
 let g:nord_uniform_status_lines = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
 "let g:airline_theme='luna'
 
 colorscheme nord
@@ -149,7 +156,7 @@ augroup autoformat_settings
     autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
     autocmd FileType java AutoFormatBuffer google-java-format
     " autocmd FileType python AutoFormatBuffer yapf
-    autocmd FileType python AutoFormatBuffer autopep8
+    autocmd FileType python AutoFormatBuffer black
     autocmd FileType rust AutoFormatBuffer rustfmt
     autocmd FileType vue AutoFormatBuffer prettier
 augroup END
