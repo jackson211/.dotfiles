@@ -53,6 +53,8 @@ export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 export PATH="/usr/local/texlive/2019/bin/x86_64-darwin:$PATH"
 export PATH="/usr/local/Cellar/gcc/10.1.0/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$WASMTIME_HOME/bin:$PATH"
+export WASMTIME_HOME="$HOME/.wasmtime"
 
 #################################################
 # Terminal
@@ -86,6 +88,3 @@ autoload -U compinit && compinit -u
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export WASMTIME_HOME="$HOME/.wasmtime"
-
-export PATH="$WASMTIME_HOME/bin:$PATH"
