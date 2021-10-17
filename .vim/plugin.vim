@@ -23,7 +23,6 @@ Plugin 'ryanoasis/vim-devicons'
 " Style
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'arcticicestudio/nord-vim'
 
 " Functionality
 Plugin 'christoomey/vim-tmux-navigator'
@@ -129,7 +128,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 "let g:airline_theme='luna'
 
-colorscheme nord
 set background=dark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
