@@ -18,13 +18,14 @@ Plugin 'VundleVim/Vundle.vim'
 " Language
 Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
-Plugin 'ryanoasis/vim-devicons'
 
 " Style
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ryanoasis/vim-devicons'
 
 " Functionality
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
