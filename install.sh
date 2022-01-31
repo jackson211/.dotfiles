@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+git submodule update --init --recursive
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 if [ "$(uname)" == "Darwin" ]; then
     echo -e "This is MacOS platform\n"
     # Do something under Mac OS X platform
