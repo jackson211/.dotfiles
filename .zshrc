@@ -43,6 +43,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 #################################################
 alias c='clear'
+alias python='python3'
 
 #################################################
 # PATH 
