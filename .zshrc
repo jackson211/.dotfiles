@@ -1,11 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
 #################################################
 # Jackson Shi's zshrc config
 #
@@ -21,11 +13,17 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+
 
 #################################################
 # Theme
 #################################################
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME=""
+
+# starship
+eval "$(starship init zsh)"
 
 #################################################
 # Plugins
@@ -35,7 +33,6 @@ plugins=(zsh-syntax-highlighting zsh-autosuggestions git colored-man-pages autoj
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 source $ZSH/oh-my-zsh.sh
 # autoload -Uz compinit && compinit
-# source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 # source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -43,7 +40,8 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 #################################################
 alias c='clear'
-alias python='python3'
+alias proxy='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
+alias unproxy='unset https_proxy http_proxy all_proxy'
 
 #################################################
 # PATH 
@@ -78,14 +76,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# autojump
 [[ -s /Users/jackson/.autojump/etc/profile.d/autojump.sh ]] && source /Users/jackson/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/dotfile/.p10k.zsh.
-#[[ ! -f ~/dotfile/.p10k.zsh ]] || source ~/dotfile/.p10k.zsh
-
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
