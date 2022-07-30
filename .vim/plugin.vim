@@ -1,60 +1,35 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Required
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins list
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Language
-" Plugin 'rust-lang/rust.vim'
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 
 " Style
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 
 " Functionality
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Yggdroot/indentLine'
-Plugin 'google/vim-maktaba'
-Plugin 'google/vim-codefmt'
-Plugin 'google/vim-glaive'
-" Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'zxqfl/tabnine-vim'
-Plugin 'dense-analysis/ale'
-Plugin 'junegunn/fzf', {'do': {-> fzf#install()}}
-Plugin 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'scrooloose/nerdtree'
+Plug 'Yggdroot/indentLine'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'zxqfl/tabnine-vim'
+Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
+Plug 'junegunn/fzf.vim'
 "fzf  If installed using Homebrew
 "set rtp+=/usr/local/opt/fzf
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#end()
+
 call glaive#Install()
 Glaive codefmt plugin[mappings]
 
