@@ -21,7 +21,6 @@ Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'zxqfl/tabnine-vim'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
